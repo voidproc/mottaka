@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  pkg:
 services:
   app:
     container_name: nuxt-app
@@ -6,5 +8,6 @@ services:
     command: npm run dev
     volumes:
       - .:/app
+      - pkg:/app/node_modules
     ports:
       - "3000:3000"
